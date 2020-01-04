@@ -1,0 +1,275 @@
+
+{% extends "model-page.html" %}
+
+{% block style %}
+
+    <style>
+    .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+    .carousel-caption {
+      color: #fff !important;
+      background-color: #0009 !important;
+    }
+
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: ;
+      font-size:15px;
+    }
+  }
+
+    .img-responsive{
+        border-radius: 20px;
+    }
+	*{
+		margin: 0;
+		padding: 0;
+
+	}
+
+    .img-responsive{
+        margin:auto;
+        width: 80%;
+    }
+
+	.aba_tabs{
+		width: 305px;
+		background-color: #fff;
+		position: relative;
+		border: solid green;
+		height: 640px;
+
+   	}
+
+	.aba_tabs ul{
+		list-style: none;
+	}
+
+	.aba_tabs ul li{
+		float: left;
+	}
+
+	.tab_label{
+		display: block;
+		width: 100px;
+		background-color: #2a323d;
+		padding: 25px;
+		font-size: 15px;
+		color:#fff;
+		cursor: pointer;
+		text-align: center;
+	}
+
+
+	.aba_tabs .rd_tab {
+	display:none;
+	position: absolute;
+}
+
+.aba_tabs .rd_tab:checked ~ label {
+	background-color: green;
+	color:#fff;}
+
+.tab-content{
+
+
+	display: none;
+	position: absolute;
+	height: 560px;
+	width: 300px;
+	left: 0;
+}
+
+.rd_tab:checked ~ .tab-content{
+	display: block;
+}
+.tab-content h2{
+	padding: 10px;
+	color: #87d3b7;
+}
+.tab-content article{
+	padding-top: 10px;
+	color: #555;
+}
+
+.direito{
+        width: 240px;
+        margin: auto;
+        padding: 10px;
+			text-align: center;
+			font-size: 10px;
+			background-color: #2a323d;
+			color: #fff;
+			border-radius: 10px;
+
+		}
+
+
+    </style>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="{% static 'cliente/topo.jpg' %}" alt="Image">
+        <div class="carousel-caption">
+
+          <p>Especializados em Topografia e Georreferenciamento estamos presentes nos mais diversos setores do agronegócio, civil, industrial e urbano.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="{% static 'cliente/drone1.jpg' %}" alt="Image">
+        <div class="carousel-caption">
+          <h3>Aerolevantamento e Mapeamento com Drone</h3>
+          <p>Qualidade e precisão dos dados e maior agilidade na coleta.</p>
+        </div>
+      </div>
+
+        <div class="item">
+        <img src="{% static 'cliente/seringueira2.jpg' %}" alt="Image">
+        <div class="carousel-caption">
+          <h3>Assessoria ambiental e projetos</h3>
+          <p> Licenciamento Ambiental<br>
+              Cadastro Ambiental Rural (CAR)<br>
+              Reserva legal e APP<br>
+              Outorga<br>
+             </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+<div class="container-fluid">
+<div class="container text-center"  >
+
+  <div class="col-sm-8">
+       <h3>Nossos serviços</h3><br>
+    <div >
+      <img src="{% static 'cliente/geo.jpg' %}" class="img-responsive"  alt="Image">
+      <p>Topografia e Georreferenciamento</p>
+    </div>
+    <div >
+      <img src="{% static 'cliente/loteamento.jpg' %}"  class="img-responsive"  alt="Image">
+      <p>Projetos de loteamento</p>
+    </div>
+    <div>
+      <img src="{% static 'cliente/mapeamento0.jpg' %}" class="img-responsive"  alt="Image">
+      <p>Mapas de uso e ocupação de solo</p>
+    </div>
+       <div class="well" style="background-color: #2a323d; color:#fff; width: 90%; margin: auto; border-radius:20px;">
+       <p> <h3><strong>+ Serviços Administrativos</strong></h3>
+				    Corretagem de imóveis, serviços <br>
+                    e implementos agrícolas<br>
+				    Locação de obras <br>
+	                Licitações<br></p>
+    </div>
+
+  </div>
+
+    <div class="container text-center">
+<div class="col-sm-4"><br>
+     <center><div class="noticia" style="display: block; margin: auto; position: relative; height: 670px;  ">
+       		<div class="aba_tabs" >
+			<ul>
+				<li>
+					<input type="radio" id="tab1" class="rd_tab" name="tabs" checked>
+					<label for="tab1" class="tab_label">Cotações</label>
+					<div class="tab-content">
+                        <article>
+                        <center><script type="text/javascript"   src="https://www.cepea.esalq.usp.br/br/widgetproduto.js.php?fonte=arial&tamanho=10&largura=300pxauto&corfundo=c4bc8b&cortexto=333333&corlinha=b5a646&id_indicador%5B%5D=leite&id_indicador%5B%5D=2&id_indicador%5B%5D=129-10&id_indicador%5B%5D=3&id_indicador%5B%5D=8&id_indicador%5B%5D=8&id_indicador%5B%5D=8"  title="Cotações Agrícolas" ></script><br>
+                        <h3>Cotação do dólar</h3><img src="http://www.debit.com.br/indicadores.php" title="Correção monetária e cálculos trabalhistas" width="200px auto"><center>
+                        </article>
+					</div>
+				</li>
+                <li>
+					<input type="radio" name="tabs" class="rd_tab" id="tab2">
+					<label for="tab2" class="tab_label">Tempo</label>
+					<div class="tab-content">
+
+						<article>
+                        <center><!-- Widget Previs&atilde;o de Tempo CPTEC/INPE --><iframe allowtransparency="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" src="https://www.cptec.inpe.br/widget/widget.php?p=4184&w=h&c=748ccc&f=ffffff" height="200px" width="215px"></iframe><noscript>Previs&atilde;o de <a href="http://www.cptec.inpe.br/cidades/tempo/4184">Prata/MG</a> oferecido por <a href="http://www.cptec.inpe.br">CPTEC/INPE</a></noscript><!-- Widget Previs&atilde;o de Tempo CPTEC/INPE -->
+                           <iframe src="http://www.conteudonanet.com.br/ms/areas_300x300.php" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" width="300" height="300"></iframe><center>
+                        </article>
+
+				</li>
+				<li>
+					<input type="radio" name="tabs" class="rd_tab" id="tab3">
+					<label for="tab3" class="tab_label">Notícias</label>
+					<div class="tab-content">
+                        <article>
+                        <center><iframe src="https://www.agron.com.br/widgets/ultimas-noticias.php?qtd=10&begin=0" width="280px auto" height="530x" scrolling="no" frameborder="0"  align="center"></iframe></center>
+                        </article>
+					</div>
+				</li>
+
+
+			</ul>
+		</div>
+
+	</div></center>
+                   <center><iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FToledoECunha&tabs=timeline&width=300&height=450px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="300" height="450px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe></center><br>
+<div class="direito">
+            </p><strong>Profissionais Responáveis</strong></p>
+			<p>Lindomar Oliveira de Toledo  <br>
+			Eng. Agronomo - CREA GO 7372\D </p></a>
+			<p>Marcelo Antonio Rodrigues da Cunha <br>
+			Eng. Agrimensor - CREA MG 32241\D </p></a>
+	    </div>
+</div>
+
+</div>
+<div class="container text-center">
+
+<br>
+<div class="col-sm-12">
+    <div class="well" style="background-color: #fff; border-radius:20px; margin: auto; width: 80%;">
+          <center><img class="logogrande"src="{% static 'cliente/logogrande.gif' %}" class="img-responsive" style="width:270px; background-color: #fff;" alt="Image"><br>
+               Email:<strong> toledoecunha@yahoo.com.br </strong><br>
+               Telefone:  <strong>+55 (34) 3431-1138</strong> - escritório<br>
+                <strong> Rua Nazário Fagundes de Freitas, 74 <br>
+                          Centro - PRATA - MG <br>
+                    CEP: 38 140-000 Brasil</strong><br>
+                          <img src="{% static 'cliente/whatsapp1.png' %}" class="img-responsive" style="width:100px;" alt="Image">
+
+                </center>
+    </div>
+
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+</div><br>
+
+
+
+
+{% endblock %}

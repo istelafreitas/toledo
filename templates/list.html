@@ -1,0 +1,37 @@
+{% extends "model-page.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/list.css' %}">
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<div class="anuncio">
+    <h1><strong>Classificados</strong></h1>
+    <p>Anuncie com a gente!</p>
+</div>
+    <div class="container">
+
+            <div class="row">
+                {% for p in produto %}
+                    <div class="col-sm">
+
+                            <div class="polaroid">
+                                <img src="{{ p.photo.url }}" alt="Norway" class="img-responsive" style="width:100%">
+                                <div class="container">
+                                    <p>{{ p.product }}</p>
+                                    <p>{{ p.description }}</p>
+                                    <p>Contato: {{ p.phone }}</p>
+                                    <p>Valor: R${{ p.price }}</p>
+                                </div>
+                            </div>
+
+                        <br>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
